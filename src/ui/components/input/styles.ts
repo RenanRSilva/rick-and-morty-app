@@ -1,6 +1,6 @@
 export const selectStyles = {
   textAlign: 'start',
-  color: '#90c747',
+  color: '#fff',
   background: 'none',
   marginTop: '10px',
   marginBottom: '10px',
