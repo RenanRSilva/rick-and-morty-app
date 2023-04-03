@@ -1,29 +1,29 @@
-# Next.js + Jest
+# Green acesso frontend challenge
 
-This example shows how to configure Jest to work with Next.js.
+This is an application developed to solve the Green Acesso frontend challenge!
 
-This includes Next.js' built-in support for Global CSS, CSS Modules and TypeScript.
+The Rick and Morty api is used in this test https://rickandmortyapi.com/documentation
 
 ## How to Use
 
-Quickly get started using [Create Next App](https://github.com/vercel/next.js/tree/canary/packages/create-next-app#readme)!
-
-In your terminal, run the following command:
+Create a .env file with the NEXT_PUBLIC_API_URL pointing to https://rickandmortyapi.com/api/
 
 ```bash
-npx create-next-app --example with-jest with-jest-app
+NEXT_PUBLIC_API_URL=https://rickandmortyapi.com/api/
+```
+### Install dependencies
+
+```bash
+npm i
+```
+### Run the application
+
+```bash
+npm run dev
 ```
 
-```bash
-yarn create next-app --example with-jest with-jest-app
-```
+### Run tests
 
 ```bash
-pnpm create next-app --example with-jest with-jest-app
-```
-
-## Run Jest Tests
-
-```bash
-npm test
+npm run test
 ```

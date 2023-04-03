@@ -14,13 +14,19 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "incremental": true,
-    "baseUrl": ".",
+    "baseUrl": "./src/",
     "paths": {
       "@/components/*": ["components/*"],
+      "@/domain/*": ["domain/*"],
       "@/pages/*": ["pages/*"],
-      "@/styles/*": ["styles/*"]
+      "@/styles/*": ["styles/*"],
+      "@/public/*": ["public/*"],
+      "@/main/*": ["main/*"],
+      "@/hooks/*": ["hooks/*"],
+      "@/__tests__/*": ["__tests__/*"],
+      "@/ui/*": ["ui/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "types.d.ts"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "types.d.ts", "src/infra/get-character.jsx"],
   "exclude": ["node_modules"]
 }
