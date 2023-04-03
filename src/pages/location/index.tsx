@@ -1,5 +1,3 @@
-import CharacterCard from "ui/components/card";
-import { QueryClient, dehydrate } from "react-query";
 import { useState } from "react";
 import { useRouter } from "next/router";
 import Link from "next/link";
@@ -12,7 +10,6 @@ import LoadingPortal from "ui/components/loading-portal";
 import PageBase from "ui/components/page-base";
 import useBreakpoints from "hooks/use-brakpoints";
 import LocationCard from "ui/components/location-card";
-import { getLocation } from "infra/get-location";
 
 export default function Location() {
   const router = useRouter();
@@ -62,21 +59,4 @@ export default function Location() {
 
 interface ICharacterCtx {
   query: any;
-}
-
-export async function getServerSideProps({ query }: ICharacterCtx) {
-  const queryClient = new QueryClient();
-
-  let page = 1;
-  if (query.page) {
-    page = parseInt(query.page);
-  }
-
-  await queryClient.prefetchQuery("location", getLocation);
-
-  return {
-    props: {
-      dehydratedState: dehydrate(queryClient),
-    },
-  };
 }

@@ -1,6 +1,5 @@
 import { ICharacter } from "domain/entities/character";
 import MasonryContainer from "ui/components/masonry";
-import { QueryClient, dehydrate } from "react-query";
 import { useCharacter } from "hooks/character";
 import { useState } from "react";
 import { useRouter } from "next/router";
@@ -11,7 +10,6 @@ import LoadingPortal from "ui/components/loading-portal";
 import PageBase from "ui/components/page-base";
 import useBreakpoints from "hooks/use-brakpoints";
 import CharacterCard from "ui/components/character-card";
-import { getCharacter } from "infra/get-character";
 
 export default function Character() {
   const router = useRouter();
@@ -64,21 +62,4 @@ export default function Character() {
 
 interface ICharacterCtx {
   query: any;
-}
-
-export async function getServerSideProps({ query }: ICharacterCtx) {
-  const queryClient = new QueryClient();
-
-  let page = 1;
-  if (query.page) {
-    page = parseInt(query.page);
-  }
-
-  await queryClient.prefetchQuery("character", getCharacter);
-
-  return {
-    props: {
-      dehydratedState: dehydrate(queryClient),
-    },
-  };
 }

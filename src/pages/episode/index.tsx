@@ -1,8 +1,5 @@
-import CharacterCard from "ui/components/card";
-import { QueryClient, dehydrate } from "react-query";
 import { useState } from "react";
 import { useRouter } from "next/router";
-import StarBorderIcon from "@mui/icons-material/StarBorder";
 import Link from "next/link";
 import { useEpisode } from "hooks/episode";
 import IEpisode from "@/domain/entities/episode";
@@ -13,7 +10,6 @@ import PageBase from "ui/components/page-base";
 import LoadingPortal from "ui/components/loading-portal";
 import useBreakpoints from "hooks/use-brakpoints";
 import EpisodeCard from "ui/components/episode-card";
-import { getEpisode } from "infra/get-episode";
 
 export default function Episodes() {
   const router = useRouter();
@@ -58,25 +54,4 @@ export default function Episodes() {
       {error && <ErrorFeedback />}
     </PageBase>
   );
-}
-
-interface ICharacterCtx {
-  query: any;
-}
-
-export async function getServerSideProps({ query }: ICharacterCtx) {
-  const queryClient = new QueryClient();
-
-  let page = 1;
-  if (query.page) {
-    page = parseInt(query.page);
-  }
-
-  await queryClient.prefetchQuery("episode", getEpisode);
-
-  return {
-    props: {
-      dehydratedState: dehydrate(queryClient),
-    },
-  };
 }
