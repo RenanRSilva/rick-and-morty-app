@@ -1,10 +1,10 @@
 import instance from "infra/axios-instance";
-import { CharacterDetailColumn } from "../character/styles";
 import PageBaseDetail from "ui/components/page-base-detail";
 import { ILocation } from "@/domain/entities/location";
-import { ItemValue } from "@/ui/components/character-card/styles";
 import RocketIcon from "@mui/icons-material/Rocket";
 import PublicIcon from "@mui/icons-material/Public";
+import { DetailColumn } from "@/styles/character/styles";
+import { ItemValue } from "@/styles/styles";
 
 export async function getStaticPaths() {
   return {
@@ -30,7 +30,7 @@ export default function LocationDetail({
 }: ILocationDetail): JSX.Element {
   return (
     <PageBaseDetail pageName={location.name}>
-      <CharacterDetailColumn>
+      <DetailColumn>
         <h1>
           <ItemValue>{location.name}</ItemValue>
         </h1>
@@ -42,7 +42,7 @@ export default function LocationDetail({
           <PublicIcon />
           {"  "}Type: <ItemValue>{location.type}</ItemValue>
         </h2>
-      </CharacterDetailColumn>
+      </DetailColumn>
     </PageBaseDetail>
   );
 }

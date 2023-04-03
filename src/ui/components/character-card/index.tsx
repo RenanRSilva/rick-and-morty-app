@@ -1,13 +1,9 @@
 import ICharacterCard from "@/domain/components/character-card";
 import Card from "../card";
 import FavoriteCharacter from "../favorite-character-button";
-import {
-  CharacterCardRow,
-  CharacterImg,
-  CharacterRowContent,
-  ItemValue,
-} from "./styles";
+import { CharacterCardRow, CharacterImg, CharacterRowContent } from "./styles";
 import useBreakpoints from "@/hooks/use-brakpoints";
+import { ItemValue } from "@/styles/styles";
 
 export default function CharacterCard({
   name,

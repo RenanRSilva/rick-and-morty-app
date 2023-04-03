@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 
-export const CharacterDetailColumn = styled.div`
+export const DetailColumn = styled.div`
   display: flex;
   flex-direction: column;
   height: 100%;

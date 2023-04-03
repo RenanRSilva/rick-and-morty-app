@@ -15,9 +15,7 @@ export const CharacterImg = styled.img`
   align-self: center;
 `
 
-export const ItemValue = styled.span`
-  font-weight: 400;
-`
+
 
 export const CharacterRowContent = styled.div`
   padding-left: 7px;

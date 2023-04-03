@@ -1,8 +1,8 @@
 import IEpisodeCard from "@/domain/components/episode-card";
 import Card from "../card";
-import { ItemValue } from "../character-card/styles";
 import ConnectedTvIcon from "@mui/icons-material/ConnectedTv";
 import SmartDisplayIcon from "@mui/icons-material/SmartDisplay";
+import { ItemValue } from "@/styles/styles";
 
 export default function EpisodeCard({
   name,

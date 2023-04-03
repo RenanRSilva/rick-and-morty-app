@@ -71,3 +71,7 @@ export const LinkGrid = styled.div`
     flex-direction: column;
 }
 `
+
+export const ItemValue = styled.span`
+  font-weight: 400;
+`

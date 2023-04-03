@@ -1,8 +1,8 @@
 import Card from "../card";
 import ILocationCard from "@/domain/components/location-card";
-import { ItemValue } from "../character-card/styles";
 import RocketIcon from "@mui/icons-material/Rocket";
 import PublicIcon from "@mui/icons-material/Public";
+import { ItemValue } from "@/styles/styles";
 
 export default function LocationCard({
   name,

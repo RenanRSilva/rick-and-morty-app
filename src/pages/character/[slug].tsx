@@ -1,10 +1,11 @@
 import instance from "infra/axios-instance";
-import { CharacterDetailColumn } from "./styles";
 import PageBaseDetail from "ui/components/page-base-detail";
 import useBreakpoints from "hooks/use-brakpoints";
 import ICharacterDetail from "@/domain/pages/character-detail";
 import FavoriteCharacter from "ui/components/favorite-character-button";
-import { CharacterImg, ItemValue } from "ui/components/character-card/styles";
+import { CharacterImg } from "ui/components/character-card/styles";
+import { DetailColumn } from "@/styles/character/styles";
+import { ItemValue } from "@/styles/styles";
 
 export async function getStaticPaths() {
   return {
@@ -28,7 +29,7 @@ export default function CharacterDetail({
 
   return (
     <PageBaseDetail pageName={character.name}>
-      <CharacterDetailColumn>
+      <DetailColumn>
         <h1>
           {character.name} <FavoriteCharacter characterName={character.name} />
         </h1>
@@ -37,8 +38,8 @@ export default function CharacterDetail({
           height={isXs ? 250 : 300}
           src={character.image}
         />
-      </CharacterDetailColumn>
-      <CharacterDetailColumn>
+      </DetailColumn>
+      <DetailColumn>
         <h2>
           Species: <ItemValue>{character.species}</ItemValue>
         </h2>
@@ -54,7 +55,7 @@ export default function CharacterDetail({
         <h2>
           Location: <ItemValue>{character.location.name}</ItemValue>
         </h2>
-      </CharacterDetailColumn>
+      </DetailColumn>
     </PageBaseDetail>
   );
 }

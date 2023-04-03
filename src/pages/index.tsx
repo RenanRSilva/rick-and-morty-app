@@ -2,9 +2,9 @@ import Head from "next/head";
 import Image from "next/image";
 import portalImg from "@/public/portal-img.png";
 import Link from "next/link";
-import { Card, Container, LinkGrid, Title } from "./styles";
 import useBreakpoints from "@/hooks/use-brakpoints";
 import RickAndMortyLogo from "@/public/rick-and-morty-logo.png";
+import { Card, Container, LinkGrid } from "@/styles/styles";
 
 export default function Home() {
   const { isXs } = useBreakpoints();
