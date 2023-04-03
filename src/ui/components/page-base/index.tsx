@@ -79,7 +79,7 @@ export default function PageBase({
             </CleanFilter>
           )}
           <BasicPagination setPage={setPage} count={pages} page={page} />
-          <Filter setRequestQuery={setRequestQuery} />
+          <Filter setPage={setPage} setRequestQuery={setRequestQuery} />
         </div>
       </PageNavigation>
       <PageContainer>{children}</PageContainer>

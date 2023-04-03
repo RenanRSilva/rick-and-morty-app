@@ -12,7 +12,7 @@ import { ContextType } from "@/main/context";
 
 type Anchor = "right";
 
-export default function Filter({ setRequestQuery }: any) {
+export default function Filter({ setRequestQuery, setPage }: any) {
   const [state, setState] = React.useState({
     right: false,
   });
@@ -70,6 +70,7 @@ export default function Filter({ setRequestQuery }: any) {
   ]);
 
   const handleFilter = (data: ICharacterInput) => {
+    setPage(1);
     setState({ right: false });
     setRequestQuery(data);
     reset();
